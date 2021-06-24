@@ -19,7 +19,7 @@
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include "mesongxl.dtsi"
-#include "partition_mbox_normal.dtsi"
+#include "partition_mbox_normal_P_32.dtsi"
 / {
 	model = "Amlogic";
 	amlogic-dt-id = "gxl_p212_2g";
@@ -159,7 +159,7 @@
 		compatible = "amlogic, dummy-charger";
 		status = "disabled";
 	};
-
+/*
 	bt-dev{
 		compatible = "amlogic, bt-dev";
 		dev_name = "bt-dev";
@@ -192,7 +192,7 @@
 			times = <12>;
 		};
 	};
-
+*/
 	sd_emmc_c: emmc@d0074000 {
 		status = "okay";
 		compatible = "amlogic, meson-mmc-gxl";
@@ -648,11 +648,11 @@
 		pl-periph-id = <0>; /** lm name */
 		clock-src = "usb0"; /** clock src */
 		port-id = <0>;  /** ref to mach/usb.h */
-		port-type = <2>;        /** 0: otg, 1: host, 2: slave */
+		port-type = <1>;        /** 0: otg, 1: host, 2: slave */
 		port-speed = <0>; /** 0: default, high, 1: full */
 		port-config = <0>; /** 0: default */
 		port-dma = <0>; /** 0: default ... 6: disable*/
-		port-id-mode = <0>; /** 0: hardware, 1: sw_host, 2: sw_slave*/
+		port-id-mode = <1>; /** 0: hardware, 1: sw_host, 2: sw_slave*/
 		usb-fifo = <728>;
 		cpu-type = "gxl";
 		controller-type = <1>; /** 0: normal, 1: host, 2: device*/

@@ -18,7 +18,7 @@
 /dts-v1/;
 
 #include "mesongxl.dtsi"
-#include "partition_mbox_normal.dtsi"
+#include "partition_mbox_normal_P_32.dtsi"
 / {
 	model = "Amlogic";
 	amlogic-dt-id = "gxl_p212_1g";
@@ -153,7 +153,7 @@
 		compatible = "amlogic, dummy-charger";
 		status = "disabled";
 	};
-
+/*
 	bt-dev{
 		compatible = "amlogic, bt-dev";
 		dev_name = "bt-dev";
@@ -186,7 +186,7 @@
 			times = <12>;
 		};
 	};
-
+*/
 	sd_emmc_c: emmc@d0074000 {
 		status = "okay";
 		compatible = "amlogic, meson-mmc-gxl";
