@@ -7,7 +7,7 @@
  *
  */
 
-#include "firmware_normal.dtsi"
+#include "firmware_system.dtsi"
 
 / {
     partitions: partitions{
@@ -102,7 +102,7 @@
 		system:system
 		{
 			pname = "system";
-			size = <0x0 0x50000000>;
+			size = <0x0 0xa0000000>;
 			mask = <1>;
 		};
 		product:product{

@@ -144,13 +144,13 @@
 		system_a:system_a
 		{
 			pname = "system_a";
-			size = <0x0 0x50000000>;
+			size = <0x0 0xa0000000>;
 			mask = <1>;
 		};
 		system_b:system_b
 		{
 			pname = "system_b";
-			size = <0x0 0x50000000>;
+			size = <0x0 0xa0000000>;
 			mask = <1>;
 		};
 		product_a:product_a{
