@@ -10,114 +10,125 @@
 #include "firmware_system.dtsi"
 
 / {
-    partitions: partitions{
-		parts = <17>;
-		part-0 = <&logo>;
-		part-1 = <&recovery>;
-		part-2 = <&misc>;
-		part-3 = <&dtbo>;
-		part-4 = <&cri_data>;
-		part-5 = <&param>;
-		part-6 = <&boot>;
-		part-7 = <&rsv>;
-		part-8 = <&metadata>;
-		part-9 = <&vbmeta>;
-		part-10 = <&tee>;
-		part-11 = <&vendor>;
-		part-12 = <&odm>;
-		part-13 = <&system>;
-		part-14 = <&product>;
-		part-15 = <&cache>;
-		part-16 = <&data>;
+    partitions: partitions {
+		parts = <20>;
+		part-0 = <&reserved>;
+		part-1 = <&cache>;
+		part-2 = <&env>;
+		part-3 = <&extended>;
+		part-4 = <&logo>;
+		part-5 = <&recovery>;
+		part-6 = <&misc>;
+		part-7 = <&dtbo>;
+		part-8 = <&cri_data>;
+		part-9 = <&param>;
+		part-10 = <&boot>;
+		part-11 = <&rsv>;
+		part-12 = <&metadata>;
+		part-13 = <&vbmeta>;
+		part-14 = <&tee>;
+		part-15 = <&vendor>;
+		part-16 = <&odm>;
+		part-17 = <&system>;
+		part-18 = <&product>;
+		part-19 = <&data>;
 
-		logo:logo{
-			pname = "logo";
-			size = <0x0 0x800000>;
+		reserved:reserved { //64MB
+			pname = "reserved";
+			size = <0x0 0x4000000>;
 			mask = <1>;
 		};
-		recovery:recovery{
-			pname = "recovery";
-			size = <0x0 0x1800000>;
-			mask = <1>;
-		};
-		misc:misc{
-			pname = "misc";
-			size = <0x0 0x800000>;
-			mask = <1>;
-		};
-		dtbo:dtbo{
-			pname = "dtbo";
-			size = <0x0 0x800000>;
-			mask = <1>;
-		};
-		cri_data:cri_data
-		{
-			pname = "cri_data";
-			size = <0x0 0x800000>;
-			mask = <2>;
-		};
-		rsv:rsv{
-			pname = "rsv";
-			size = <0x0 0x1000000>;
-			mask = <1>;
-		};
-		metadata:metadata{
-			pname = "metadata";
-			size = <0x0 0x1000000>;
-			mask = <1>;
-		};
-		vbmeta:vbmeta{
-			pname = "vbmeta";
-			size = <0x0 0x200000>;
-			mask = <1>;
-		};
-		param:param{
-			pname = "param";
-			size = <0x0 0x1000000>;
-			mask = <2>;
-		};
-		boot:boot
-		{
-			pname = "boot";
-			size = <0x0 0x1000000>;
-			mask = <1>;
-		};
-		tee:tee{
-			pname = "tee";
-			size = <0x0 0x2000000>;
-			mask = <1>;
-		};
-		vendor:vendor
-		{
-			pname = "vendor";
-			size = <0x0 0x10000000>;
-			mask = <1>;
-		};
-		odm:odm
-		{
-			pname = "odm";
-			size = <0x0 0x8000000>;
-			mask = <1>;
-		};
-		system:system
-		{
-			pname = "system";
-			size = <0x0 0xb0000000>;
-			mask = <1>;
-		};
-		product:product{
-			pname = "product";
-			size = <0x0 0x8000000>;
-			mask = <1>;
-		};
-		cache:cache
-		{
+		cache:cache { //1120MB
 			pname = "cache";
 			size = <0x0 0x46000000>;
 			mask = <2>;
 		};
-		data:data
-		{
+		env:env { //8MB
+			pname = "env";
+			size = <0x0 0x800000>;
+			mask = <1>;
+		};
+		extended:extended {
+			pname = "extended";
+			size = <0x0 0x0>;
+			mask = <2>;
+		};
+		logo:logo { //8MB
+			pname = "logo";
+			size = <0x0 0x800000>;
+			mask = <1>;
+		};
+		recovery:recovery { //24MB
+			pname = "recovery";
+			size = <0x0 0x1800000>;
+			mask = <1>;
+		};
+		misc:misc { //8MB
+			pname = "misc";
+			size = <0x0 0x800000>;
+			mask = <1>;
+		};
+		dtbo:dtbo { //8MB
+			pname = "dtbo";
+			size = <0x0 0x800000>;
+			mask = <1>;
+		};
+		cri_data:cri_data { //8MB
+			pname = "cri_data";
+			size = <0x0 0x800000>;
+			mask = <2>;
+		};
+		param:param { //16MB
+			pname = "param";
+			size = <0x0 0x1000000>;
+			mask = <2>;
+		};
+		boot:boot { //16MB
+			pname = "boot";
+			size = <0x0 0x1000000>;
+			mask = <1>;
+		};
+		rsv:rsv { //16MB
+			pname = "rsv";
+			size = <0x0 0x1000000>;
+			mask = <1>;
+		};
+		metadata:metadata { //16MB
+			pname = "metadata";
+			size = <0x0 0x1000000>;
+			mask = <1>;
+		};
+		vbmeta:vbmeta { //2MB
+			pname = "vbmeta";
+			size = <0x0 0x200000>;
+			mask = <1>;
+		};
+		tee:tee { //32MB
+			pname = "tee";
+			size = <0x0 0x2000000>;
+			mask = <1>;
+		};
+		vendor:vendor { //256MB
+			pname = "vendor";
+			size = <0x0 0x10000000>;
+			mask = <1>;
+		};
+		odm:odm { //128MB
+			pname = "odm";
+			size = <0x0 0x8000000>;
+			mask = <1>;
+		};
+		system:system { //2560MB
+			pname = "system";
+			size = <0x0 0xb0000000>;
+			mask = <1>;
+		};
+		product:product { //128MB
+			pname = "product";
+			size = <0x0 0x8000000>;
+			mask = <1>;
+		};
+		data:data {
 			pname = "data";
 			size = <0xffffffff 0xffffffff>;
 			mask = <4>;

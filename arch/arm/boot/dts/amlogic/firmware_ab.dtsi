@@ -29,21 +29,21 @@ firmware {
 
 		vendor {
 			compatible = "android,vendor";
-			dev = "/dev/block/vendor";
+			dev = "/dev/block/mmcblk1p16";
 			type = "ext4";
 			mnt_flags = "ro,barrier=1,inode_readahead_blks=8";
 			fsmgr_flags = "wait,slotselect";
 			};
 		product {
 			compatible = "android,product";
-			dev = "/dev/block/product";
+			dev = "/dev/block/mmcblk1p19";
 			type = "ext4";
 			mnt_flags = "ro,barrier=1,inode_readahead_blks=8";
 			fsmgr_flags = "wait,slotselect";
 			};
 		odm {
 			compatible = "android,odm";
-			dev = "/dev/block/odm";
+			dev = "/dev/block/mmcblk1p17";
 			type = "ext4";
 			mnt_flags = "ro,barrier=1,inode_readahead_blks=8";
 			fsmgr_flags = "wait,slotselect";
